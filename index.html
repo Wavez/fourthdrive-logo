@@ -42,20 +42,64 @@
           stroke-width: 0.5px;
         }
 
+        /* ------ animations --------*/
 
         #spinner {
           animation: spinner 2s infinite linear;
         }
 
+        @keyframes spinner {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(359deg);
+          }
+        }
+
 
         #eye-saw {
-          animation:
-            eye-saw 3s infinite cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+          animation: eye-saw 3s infinite both;
+
+        }
+
+         @keyframes eye-saw {
+          20% {
+            transform: rotate(0deg);
+            animation-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+          }
+
+          80% {
+            transform: rotate(359deg);
+            animation-timing-function: ease-in-out;
+          }
+
+          90% {
+            transform: rotate(349deg);
+            animation-timing-function: ease-in-out;
+
+          }
+
+          100% {
+            transform: rotate(359deg);
+            animation-timing-function: ease-in-out;
+          }
 
         }
 
         #eye-inner {
           animation: eye-inner 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) infinite alternate both;
+        }
+
+         @keyframes eye-inner {
+          60% {
+            r: 8;
+          }
+
+          100% {
+            r: 14.5;
+          }
         }
 
         #bones {
@@ -70,53 +114,52 @@
           10% {
             transform: rotate(10deg);
           }
-          20%{
-            transform: rotate(0deg);
-          }
 
-          50%{
-            transform: rotate(0deg);
-          }
-          60%{
-            transform: rotate(-10deg);
-          }
-          70%{
-            transform: rotate(0deg);
-          }
-
-
-        }
-
-        @keyframes eye-saw {
           20% {
             transform: rotate(0deg);
           }
 
-          100% {
-            transform: rotate(359deg);
-          }
-
-        }
-
-        @keyframes spinner {
-          from {
+          50% {
             transform: rotate(0deg);
           }
 
-          to {
-            transform: rotate(359deg);
+          60% {
+            transform: rotate(-10deg);
+          }
+
+          70% {
+            transform: rotate(0deg);
           }
         }
 
-        @keyframes eye-inner {
-          60% {
-            r: 8;
-            cy: 67.5;
+        #egg {
+          animation: egg cubic-bezier(0.1, -0.550, 0.265, 1.550) 3s infinite;
+        }
+
+        @keyframes egg {
+          0% {
+            transform: translateY(0);
           }
 
+          20% {
+            transform: translateY(7px);
+          }
+
+          40% {
+            transform: translateY(0);
+          }
+
+          43% {
+            transform: translateY(2px);
+          }
+
+          46% {
+            transform: translateY(0);
+          }
+
+
           100% {
-            r: 14.5;
-            cy: 67.5;
+            transform: translateY(0);
           }
         }
       </style>
